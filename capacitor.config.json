@@ -1,0 +1,13 @@
+{
+  "appId": "com.hugex.birim.blm01",
+  "appName": "HUGEX BLM-01",
+  "webDir": "www",
+  "bundledWebRuntime": false,
+  "server": {
+    "androidScheme": "https",
+    "hostname": "localhost"
+  },
+  "android": {
+    "allowMixedContent": false
+  }
+}

@@ -1,0 +1,17 @@
+============================================================
+HUGEX BLM-01 — AYRI ANDROID (.APK) PROJESİ
+============================================================
+Paket Kimliği (Application ID): com.hugex.birim.blm01
+Uygulama Adı: HUGEX BLM-01
+Kilitli Birim: BLM-01 — 1. Namlu Kaynak (Ayak Çakma)
+Kullanıcı Adı: namlu-ayak
+
+Bu APK projesi YALNIZCA Birim Paneli uygulamasını içerir. Ana yönetici
+uygulamasından tamamen bağımsız paket kimliğiyle kurulabilir ve operatörler
+Google hesabı olmadan KULLANICI ADI + ŞİFRE ile giriş yapar.
+
+GITHUB ACTIONS İLE .APK ÜRETME:
+1. GitHub'da yeni (Private) bir depo oluşturun.
+2. Bu ZIP içindeki tüm dosyaları (.github klasörü dahil!) depoya yükleyin.
+3. GitHub -> Actions sekmesinden oluşan "HUGEX-Birim-Paneli-BLM-01-APK" (.apk) dosyasını
+   indirip ilgili birimin Android tablet/telefonuna kurun.

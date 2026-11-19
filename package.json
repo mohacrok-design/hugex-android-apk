@@ -1,0 +1,17 @@
+{
+  "name": "com.hugex.birim.blm01",
+  "version": "1.0.0",
+  "description": "HUGEX BLM-01 Ayrı Android APK Capacitor Projesi",
+  "scripts": {
+    "android:init": "npx cap add android",
+    "android:sync": "npx cap sync android",
+    "android:open": "npx cap open android"
+  },
+  "dependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/core": "^6.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.2.0"
+  }
+}

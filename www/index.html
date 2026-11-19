@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <script>window.__HUGEX_UNIT_CONFIG__={"ws":"yvEDWPnReNQQCobFqosnu2nqXB02","unitId":"u1","unitCode":"BLM-01","unitName":"1. Namlu Kaynak (Ayak Çakma)","lockedBuild":true};</script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HUGEX BLM-01 — 1. Namlu Kaynak (Ayak Çakma)</title>
+    <meta name="description" content="HUGEX üretim birimleri için kilitli tezgah iş emri, kalem düşme ve operasyon kayıt uygulaması." />
+    <meta property="og:title" content="HUGEX Birim Paneli" />
+    <meta property="og:description" content="HUGEX üretim birimleri için kilitli tezgah iş emri, kalem düşme ve operasyon kayıt uygulaması." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0f2942" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="HUGEX Birim" />
+    <link rel="manifest" href="/birim-paneli-manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script type="module" crossorigin src="/assets/birimPaneli-ClYgtVWQ.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/src-BpHdwD6L.js">
+    <link rel="stylesheet" crossorigin href="/assets/src-Ctae9_Ut.css">
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-100">
+    <div id="root" class="min-h-screen flex flex-col"></div>
+    <script>
+      (function () {
+        var shown = false;
+        function showBootRecovery(reason) {
+          var root = document.getElementById('root');
+          if (shown || !root || root.childElementCount > 0) return;
+          shown = true;
+          try {
+            var retryKey = 'hugex_unit_boot_reset_v1';
+            if (!sessionStorage.getItem(retryKey) && 'serviceWorker' in navigator) {
+              sessionStorage.setItem(retryKey, '1');
+              Promise.all([
+                navigator.serviceWorker.getRegistrations().then(function (regs) {
+                  return Promise.all(regs.map(function (r) { return r.unregister(); }));
+                }),
+                'caches' in window
+                  ? caches.keys().then(function (keys) {
+                      return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+                    })
+                  : Promise.resolve()
+              ]).finally(function () { window.location.reload(); });
+              return;
+            }
+          } catch (e) {}
+          root.innerHTML =
+            '<div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px;background:#f1f5f9;font-family:Inter,system-ui,sans-serif">' +
+            '<div style="max-width:420px;width:100%;background:#fff;border:1px solid #cbd5e1;border-radius:16px;padding:24px;box-shadow:0 10px 25px rgba(15,41,66,0.08)">' +
+            '<h2 style="margin:0 0 8px;font-size:16px;color:#0f2942">Birim Paneli Yüklenemedi</h2>' +
+            '<p style="margin:0 0 14px;font-size:13px;color:#475569;line-height:1.5">Tarayıcı önbelleği veya bağlantı nedeniyle sayfa açılamadı. Aşağıdaki butonla önbelleği temizleyip yeniden yükleyebilirsiniz.</p>' +
+            (reason ? '<p style="margin:0 0 14px;font-size:11px;color:#b91c1c;background:#fef2f2;padding:8px 10px;border-radius:8px;word-break:break-word">' + String(reason).replace(/</g, '&lt;') + '</p>' : '') +
+            '<button id="hugex-unit-reset-btn" type="button" style="width:100%;padding:10px 16px;border:none;border-radius:10px;background:#0f2942;color:#fff;font-weight:600;font-size:13px;cursor:pointer">Önbelleği Temizle ve Yenile</button>' +
+            '</div></div>';
+          var btn = document.getElementById('hugex-unit-reset-btn');
+          if (btn) {
+            btn.addEventListener('click', function () {
+              try { sessionStorage.removeItem('hugex_unit_boot_reset_v1'); } catch (e) {}
+              var tasks = [];
+              if ('serviceWorker' in navigator) {
+                tasks.push(navigator.serviceWorker.getRegistrations().then(function (regs) {
+                  return Promise.all(regs.map(function (r) { return r.unregister(); }));
+                }));
+              }
+              if ('caches' in window) {
+                tasks.push(caches.keys().then(function (keys) {
+                  return Promise.all(keys.map(function (k) { return caches.delete(k); }));
+                }));
+              }
+              Promise.all(tasks).finally(function () { window.location.reload(); });
+            });
+          }
+        }
+        window.addEventListener('error', function (ev) {
+          var isScriptErr = ev && ev.target && ev.target.tagName === 'SCRIPT';
+          var isJsErr = ev && typeof ev.message === 'string' && ev.message.length > 0;
+          if (!isScriptErr && !isJsErr) return;
+          var msg = isJsErr ? ev.message : (ev.target && ev.target.src) || 'Script yüklenemedi';
+          showBootRecovery(msg);
+        }, true);
+        window.addEventListener('unhandledrejection', function (ev) {
+          var r = ev && ev.reason;
+          showBootRecovery(r && r.message ? r.message : String(r || ''));
+        });
+      })();
+    </script>
+  </body>
+</html>
